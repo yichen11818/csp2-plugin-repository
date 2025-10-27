@@ -19,10 +19,12 @@
     "framework": "counterstrikesharp",
     "featured": false
   },
+  "dependencies": [],
   "installation": {
     "type": "extract",
     "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
-    "files": ["YourPluginName/*"]
+    "files": ["YourPluginName/*"],
+    "requiresRestart": true
   },
   "verification": {
     "method": "community",

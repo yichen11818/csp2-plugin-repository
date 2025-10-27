@@ -20,10 +20,32 @@
     "frameworkVersion": ">=1.0.0",
     "featured": true
   },
+  "dependencies": [
+    "cs2-tags",
+    "cs2-customvotes",
+    "sharptimerz",
+    "databaseconnection"
+  ],
   "installation": {
     "type": "extract",
-    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
-    "files": ["WeaponPaints/*"]
+    "mappings": [
+      {
+        "source": "addons/counterstrikesharp/plugins/WeaponPaints/*",
+        "target": "game/csgo/addons/counterstrikesharp/plugins/WeaponPaints",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/gamedata/*",
+        "target": "game/csgo/addons/counterstrikesharp/gamedata",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/configs/plugins/WeaponPaints/*",
+        "target": "game/csgo/addons/counterstrikesharp/configs/plugins/WeaponPaints",
+        "recursive": true
+      }
+    ],
+    "requiresRestart": true
   },
   "verification": {
     "method": "github-verified",

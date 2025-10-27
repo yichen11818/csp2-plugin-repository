@@ -52,6 +52,8 @@ This guide will help you get started with the CSP2 Plugin Repository in 5 minute
    ```
 
 4. **Edit Configuration**
+   
+   **Simple Installation** (for plugins with simple structure):
    ```json
    {
      "id": "my-awesome-plugin",
@@ -63,6 +65,44 @@ This guide will help you get started with the CSP2 Plugin Repository in 5 minute
        "name": "My Awesome Plugin",
        "description": "An awesome plugin for CS2",
        "category": "gameplay"
+     },
+     "dependencies": [],
+     "installation": {
+       "type": "extract",
+       "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+       "files": ["MyAwesomePlugin/*"]
+     }
+   }
+   ```
+   
+   **Advanced Installation** (for plugins with complex file structure):
+   ```json
+   {
+     "id": "my-complex-plugin",
+     "repository": {
+       "owner": "your-username",
+       "repo": "my-plugin-repo"
+     },
+     "dependencies": ["dependency-plugin-id"],
+     "installation": {
+       "type": "extract",
+       "mappings": [
+         {
+           "source": "addons/counterstrikesharp/plugins/MyPlugin/*",
+           "target": "game/csgo/addons/counterstrikesharp/plugins/MyPlugin",
+           "recursive": true
+         },
+         {
+           "source": "addons/counterstrikesharp/gamedata/*",
+           "target": "game/csgo/addons/counterstrikesharp/gamedata",
+           "recursive": true
+         },
+         {
+           "source": "addons/counterstrikesharp/configs/**/*",
+           "target": "game/csgo/addons/counterstrikesharp/configs",
+           "recursive": true
+         }
+       ]
      }
    }
    ```

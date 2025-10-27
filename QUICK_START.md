@@ -61,6 +61,7 @@ This guide will help you get started with the CSP2 Plugin Repository in 5 minute
      },
      "metadata": {
        "name": "My Awesome Plugin",
+       "description": "An awesome plugin for CS2",
        "category": "gameplay"
      }
    }

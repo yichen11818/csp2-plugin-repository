@@ -61,8 +61,13 @@
         "name": {
           "type": "string"
         },
+        "description": {
+          "type": "string",
+          "description": "Plugin description in English"
+        },
         "descriptionZh": {
-          "type": "string"
+          "type": "string",
+          "description": "Plugin description in Chinese (optional)"
         },
         "category": {
           "type": "string"

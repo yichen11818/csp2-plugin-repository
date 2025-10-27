@@ -12,6 +12,7 @@
   "downloadPattern": "WeaponPaints.zip",
   "metadata": {
     "name": "WeaponPaints",
+    "description": "Advanced weapon skin system for CS2 with database storage and custom skin support",
     "descriptionZh": "CS2 高级武器皮肤系统，支持数据库存储和自定义皮肤",
     "category": "gameplay",
     "tags": ["skins", "weapons", "customization", "database", "mysql"],

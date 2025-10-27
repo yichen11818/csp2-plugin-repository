@@ -69,7 +69,8 @@ Want to add your CS2 plugin to the marketplace? Follow these steps:
      "downloadPattern": "YourPlugin.zip",
      "metadata": {
        "name": "Your Plugin Name",
-       "descriptionZh": "中文描述",
+       "description": "Plugin description in English",
+       "descriptionZh": "插件的中文描述（可选）",
        "category": "gameplay",
        "tags": ["tag1", "tag2"],
        "framework": "counterstrikesharp",

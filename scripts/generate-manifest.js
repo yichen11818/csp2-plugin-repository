@@ -181,7 +181,7 @@ async function buildPluginEntry(config) {
     name: metadata.name || config.id,
     slug: config.id,
     author,
-    description: repoInfo?.description || `Plugin ${metadata.name || config.id}`,
+    description: metadata.description || repoInfo?.description || `Plugin ${metadata.name || config.id}`,
     descriptionZh: metadata.descriptionZh || '',
     framework: metadata.framework || 'counterstrikesharp',
     frameworkVersion: metadata.frameworkVersion || '>=1.0.0',

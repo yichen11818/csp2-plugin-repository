@@ -52,7 +52,8 @@ Create a new file in the `plugins/` directory named `your-plugin-id.json`:
   "downloadPattern": "YourPluginName.zip",
   "metadata": {
     "name": "Your Plugin Display Name",
-    "descriptionZh": "插件的中文描述（可选但推荐）",
+    "description": "Plugin description in English",
+    "descriptionZh": "插件的中文描述（可选）",
     "category": "gameplay",
     "tags": ["relevant", "tags", "here"],
     "framework": "counterstrikesharp",
@@ -131,6 +132,7 @@ Brief description of what your plugin does.
 - [ ] Plugin is open source
 - [ ] Repository has Releases
 - [ ] JSON configuration validated (`npm run validate`)
+- [ ] English description provided
 - [ ] Chinese description provided (optional)
 - [ ] Icons/screenshots added (optional)
 ```
@@ -161,6 +163,7 @@ Brief description of what your plugin does.
 
 | Feature | Why It's Important |
 |---------|-------------------|
+| **English Description** | Primary description for all users |
 | **Chinese Description** | Helps Chinese users understand your plugin |
 | **Icons & Screenshots** | Makes your plugin more appealing |
 | **Detailed README** | Better user experience |

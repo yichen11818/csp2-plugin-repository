@@ -12,7 +12,8 @@
   "downloadPattern": "YourPluginName.zip",
   "metadata": {
     "name": "Your Plugin Display Name",
-    "descriptionZh": "插件的中文描述（可选但推荐）",
+    "description": "Plugin description in English",
+    "descriptionZh": "插件的中文描述（可选）",
     "category": "gameplay",
     "tags": ["tag1", "tag2", "tag3"],
     "framework": "counterstrikesharp",

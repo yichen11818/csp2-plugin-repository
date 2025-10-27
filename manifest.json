@@ -1,0 +1,120 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2025-10-27T17:23:24.481Z",
+  "updateInterval": 3600,
+  "categories": [
+    {
+      "id": "gameplay",
+      "name": "Gameplay",
+      "nameZh": "游戏玩法",
+      "description": "Modify game mechanics and add new features",
+      "descriptionZh": "修改游戏机制和添加新功能"
+    },
+    {
+      "id": "admin",
+      "name": "Administration",
+      "nameZh": "服务器管理",
+      "description": "Server management and moderation tools",
+      "descriptionZh": "服务器管理和审核工具"
+    },
+    {
+      "id": "utility",
+      "name": "Utility",
+      "nameZh": "实用工具",
+      "description": "Helpful utilities and practice tools",
+      "descriptionZh": "实用工具和练习辅助"
+    },
+    {
+      "id": "fun",
+      "name": "Fun",
+      "nameZh": "娱乐",
+      "description": "Entertainment and fun plugins",
+      "descriptionZh": "娱乐和趣味插件"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "weaponpaints",
+      "name": "WeaponPaints",
+      "slug": "weaponpaints",
+      "author": {
+        "name": "Nereziel",
+        "github": "Nereziel"
+      },
+      "description": "Advanced weapon skin system for CS2 with database storage and custom skin support",
+      "descriptionZh": "CS2 高级武器皮肤系统，支持数据库存储和自定义皮肤",
+      "framework": "counterstrikesharp",
+      "frameworkVersion": ">=1.0.0",
+      "dependencies": [],
+      "category": "gameplay",
+      "tags": [
+        "skins",
+        "weapons",
+        "customization",
+        "database",
+        "mysql"
+      ],
+      "version": "0.0.399",
+      "changelog": "https://github.com/Nereziel/cs2-WeaponPaints/releases/tag/build-399",
+      "downloads": {
+        "total": 0,
+        "lastMonth": 0
+      },
+      "rating": {
+        "average": 0,
+        "count": 0
+      },
+      "repository": {
+        "type": "github",
+        "owner": "Nereziel",
+        "repo": "cs2-WeaponPaints",
+        "branch": "main"
+      },
+      "download": {
+        "url": "https://github.com/Nereziel/cs2-WeaponPaints/releases/download/build-399/WeaponPaints.zip",
+        "size": 6021749
+      },
+      "installation": {
+        "type": "extract",
+        "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+        "files": [
+          "WeaponPaints/*"
+        ]
+      },
+      "configuration": {
+        "required": false,
+        "files": [],
+        "documentation": "https://github.com/Nereziel/cs2-WeaponPaints#readme"
+      },
+      "media": {
+        "screenshots": []
+      },
+      "links": {
+        "homepage": "https://github.com/Nereziel/cs2-WeaponPaints",
+        "documentation": "https://github.com/Nereziel/cs2-WeaponPaints/wiki",
+        "issues": "https://github.com/Nereziel/cs2-WeaponPaints/issues"
+      },
+      "verified": true,
+      "featured": true,
+      "officialSupport": false,
+      "compatibility": {
+        "cs2Version": ">=1.0.0",
+        "platforms": [
+          "windows",
+          "linux"
+        ]
+      },
+      "metadata": {
+        "addedAt": "2025-10-27T00:00:00Z",
+        "updatedAt": "2025-10-17T22:59:04Z",
+        "lastChecked": "2025-10-27T17:23:23.481Z"
+      }
+    }
+  ],
+  "statistics": {
+    "totalPlugins": 1,
+    "verifiedPlugins": 1,
+    "totalDownloads": 0,
+    "activeAuthors": 1
+  }
+}

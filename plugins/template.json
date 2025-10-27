@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/plugin.schema.json",
   "id": "your-plugin-id",
-  "enabled": true,
+  "enabled": false,
   "autoUpdate": true,
   "repository": {
     "type": "github",

@@ -10,6 +10,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const Ajv = require('ajv');
+const addFormats = require('ajv-formats');
 const chalk = require('chalk');
 
 // Configuration
@@ -18,8 +19,9 @@ const PLUGIN_SCHEMA_PATH = path.join(__dirname, '../schemas/plugin.schema.json')
 const MANIFEST_SCHEMA_PATH = path.join(__dirname, '../schemas/manifest.schema.json');
 const MANIFEST_PATH = path.join(__dirname, '../manifest.json');
 
-// Initialize AJV
+// Initialize AJV with format support
 const ajv = new Ajv({ allErrors: true });
+addFormats(ajv);  // 添加日期时间等格式支持
 
 let totalErrors = 0;
 let totalWarnings = 0;

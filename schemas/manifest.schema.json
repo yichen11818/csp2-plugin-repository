@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/your-org/csp2-plugin-repository/main/schemas/manifest.schema.json",
+  "$id": "https://raw.githubusercontent.com/yichen11818/csp2-plugin-repository/main/schemas/manifest.schema.json",
   "title": "CSP2 Plugin Manifest",
   "description": "Schema for CSP2 plugin repository manifest",
   "type": "object",

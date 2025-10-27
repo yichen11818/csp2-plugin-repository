@@ -6,6 +6,8 @@
 [![Validate Plugins](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/validate-pr.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**English** | [简体中文](README.zh-CN.md)
+
 ## 📦 What is this?
 
 This repository contains the plugin marketplace metadata for [CSP2](https://github.com/yichen11818/csp2), a modern CS2 server management panel. It automatically tracks and indexes CS2 plugins from GitHub, making them easily installable through CSP2's GUI.
@@ -18,6 +20,9 @@ This repository contains the plugin marketplace metadata for [CSP2](https://gith
 - **Schema Validation**: All plugins are validated against JSON Schema
 - **Link Checking**: Automated checks ensure all download links are working
 - **Multi-language**: Support for English and Chinese descriptions
+- **Advanced File Mapping**: Support complex plugin structures with custom file mappings
+- **Dependency Management**: Automatically handle plugin dependencies
+- **Framework Version Control**: Specify required framework versions for compatibility
 
 ## 📊 Statistics
 
@@ -54,6 +59,8 @@ Want to add your CS2 plugin to the marketplace? Follow these steps:
    ```
 
 3. **Fill in your plugin information**
+
+   **Simple Installation** (for plugins with straightforward structure):
    ```json
    {
      "$schema": "../schemas/plugin.schema.json",
@@ -74,7 +81,63 @@ Want to add your CS2 plugin to the marketplace? Follow these steps:
        "category": "gameplay",
        "tags": ["tag1", "tag2"],
        "framework": "counterstrikesharp",
+       "frameworkVersion": ">=1.0.0",
        "featured": false
+     },
+     "dependencies": [],
+     "installation": {
+       "type": "extract",
+       "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+       "files": ["YourPlugin/*"],
+       "requiresRestart": true
+     }
+   }
+   ```
+
+   **Advanced Installation** (for plugins with complex file structure):
+   ```json
+   {
+     "$schema": "../schemas/plugin.schema.json",
+     "id": "weaponpaints",
+     "enabled": true,
+     "autoUpdate": true,
+     "repository": {
+       "type": "github",
+       "owner": "Nereziel",
+       "repo": "cs2-WeaponPaints",
+       "releaseType": "latest"
+     },
+     "downloadPattern": "WeaponPaints.zip",
+     "metadata": {
+       "name": "WeaponPaints",
+       "description": "Advanced weapon skin system for CS2",
+       "descriptionZh": "CS2 高级武器皮肤系统",
+       "category": "gameplay",
+       "tags": ["skins", "weapons"],
+       "framework": "counterstrikesharp",
+       "frameworkVersion": ">=1.0.0"
+     },
+     "dependencies": ["some-dependency"],
+     "installation": {
+       "type": "extract",
+       "mappings": [
+         {
+           "source": "addons/counterstrikesharp/plugins/WeaponPaints/*",
+           "target": "game/csgo/addons/counterstrikesharp/plugins/WeaponPaints",
+           "recursive": true
+         },
+         {
+           "source": "addons/counterstrikesharp/gamedata/*",
+           "target": "game/csgo/addons/counterstrikesharp/gamedata",
+           "recursive": true
+         },
+         {
+           "source": "addons/counterstrikesharp/configs/**/*",
+           "target": "game/csgo/addons/counterstrikesharp/configs",
+           "recursive": true
+         }
+       ],
+       "requiresRestart": true
      }
    }
    ```

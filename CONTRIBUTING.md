@@ -215,19 +215,105 @@ Specify the required framework:
 - `metamod`: For Metamod:Source plugins
 - `sourcemod`: For SourceMod plugins (if supported in future)
 
+### Framework Version
+
+Specify the minimum required framework version for compatibility:
+
+```json
+"metadata": {
+  "framework": "counterstrikesharp",
+  "frameworkVersion": ">=1.0.0"
+}
+```
+
+Version formats supported:
+- `>=1.0.0` - Version 1.0.0 or higher
+- `^1.2.0` - Compatible with 1.x.x
+- `~1.2.3` - Compatible with 1.2.x
+- `1.0.0` - Exact version
+
+### Dependencies
+
+If your plugin depends on other plugins, list them by their plugin IDs:
+
+```json
+"dependencies": [
+  "database-connection",
+  "admin-system",
+  "cs2-tags"
+]
+```
+
+**Important:**
+- Dependencies must be available in the plugin repository
+- CSP2 will prompt users to install dependencies first
+- List only direct dependencies (transitive dependencies are handled automatically)
+- If no dependencies, use an empty array: `"dependencies": []`
+
 ### Installation Configuration
+
+CSP2 supports two installation methods: **Simple** and **Advanced (File Mappings)**.
+
+#### Simple Installation
+
+For plugins with a straightforward structure (single plugin folder):
 
 ```json
 "installation": {
   "type": "extract",
   "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
-  "files": ["YourPlugin/*"]
+  "files": ["YourPlugin/*"],
+  "requiresRestart": true
 }
 ```
 
 - **`type`**: Usually `extract` for .zip files
 - **`targetPath`**: Where to extract (relative to CS2 server root)
 - **`files`**: Which files/folders to extract (supports wildcards)
+- **`requiresRestart`**: Whether server restart is required after installation
+
+#### Advanced Installation (File Mappings)
+
+For plugins with complex structures (multiple directories, gamedata, configs):
+
+```json
+"installation": {
+  "type": "extract",
+  "mappings": [
+    {
+      "source": "addons/counterstrikesharp/plugins/MyPlugin/*",
+      "target": "game/csgo/addons/counterstrikesharp/plugins/MyPlugin",
+      "recursive": true
+    },
+    {
+      "source": "addons/counterstrikesharp/gamedata/*",
+      "target": "game/csgo/addons/counterstrikesharp/gamedata",
+      "recursive": true
+    },
+    {
+      "source": "addons/counterstrikesharp/configs/**/*",
+      "target": "game/csgo/addons/counterstrikesharp/configs",
+      "recursive": true,
+      "exclude": ["*.example"]
+    }
+  ],
+  "requiresRestart": true
+}
+```
+
+**Mapping Properties:**
+- **`source`**: Path pattern in the ZIP file (supports `*` and `**` wildcards)
+  - `*`: Matches any file/folder in current directory
+  - `**`: Matches any file/folder recursively
+- **`target`**: Destination path relative to server root
+- **`recursive`**: Whether to copy subdirectories (default: true)
+- **`exclude`**: Patterns to exclude from copying (optional)
+
+**When to use File Mappings:**
+- ✅ Plugin has files in multiple directories (plugins, gamedata, configs)
+- ✅ Need precise control over file placement
+- ✅ Need to exclude certain files
+- ❌ Simple plugins with single folder structure (use simple installation)
 
 ### Verification
 

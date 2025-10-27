@@ -20,17 +20,37 @@
     "frameworkVersion": ">=1.0.0",
     "featured": false
   },
-  "dependencies": [],
+  "dependencies": [
+    "dependency-plugin-id-1",
+    "dependency-plugin-id-2"
+  ],
   "installation": {
     "type": "extract",
-    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
-    "files": ["YourPluginName/*"],
+    "mappings": [
+      {
+        "source": "addons/counterstrikesharp/plugins/YourPlugin/*",
+        "target": "game/csgo/addons/counterstrikesharp/plugins/YourPlugin",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/gamedata/*",
+        "target": "game/csgo/addons/counterstrikesharp/gamedata",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/configs/plugins/YourPlugin/*",
+        "target": "game/csgo/addons/counterstrikesharp/configs/plugins/YourPlugin",
+        "recursive": true,
+        "exclude": ["*.example", "*.template"]
+      }
+    ],
     "requiresRestart": true
   },
   "verification": {
     "method": "community",
     "verifiedBy": "your-github-username",
     "verifiedAt": "2025-10-27T00:00:00Z",
-    "notes": "Brief description of testing performed"
+    "notes": "Tested on CS2 build XXXXX with CounterStrikeSharp vX.X.X"
   }
 }
+

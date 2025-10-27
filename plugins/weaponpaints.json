@@ -17,6 +17,7 @@
     "category": "gameplay",
     "tags": ["skins", "weapons", "customization", "database", "mysql"],
     "framework": "counterstrikesharp",
+    "frameworkVersion": ">=1.0.0",
     "featured": true
   },
   "installation": {
@@ -28,7 +29,7 @@
     "method": "github-verified",
     "verifiedBy": "csp2-team",
     "verifiedAt": "2025-10-27T00:00:00Z",
-    "notes": "Popular plugin with active development and good community support"
+    "notes": "Popular plugin with active development and good community support. Note: This plugin uses build numbers instead of semantic versioning."
   }
 }
 

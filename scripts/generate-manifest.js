@@ -94,14 +94,38 @@ async function fetchLatestRelease(owner, repo) {
     // 如果不符合 semver 格式，尝试修复
     if (!/^\d+\.\d+\.\d+/.test(version)) {
       console.warn(`⚠️  Non-semver version "${version}" detected, attempting to normalize`);
-      // 尝试从 tag 中提取版本号
-      const match = version.match(/(\d+)\.(\d+)\.(\d+)/);
-      if (match) {
-        version = `${match[1]}.${match[2]}.${match[3]}`;
-      } else {
-        // 如果完全无法解析，使用默认版本
-        console.warn(`⚠️  Unable to parse version "${version}", using 0.0.0`);
-        version = '0.0.0';
+      
+      // 尝试多种模式提取版本号
+      const patterns = [
+        /(\d+)\.(\d+)\.(\d+)/,           // 标准 x.y.z
+        /build[_-]?(\d+)/i,              // build-123 或 build_123
+        /(\d+)/                          // 纯数字
+      ];
+      
+      let matched = false;
+      for (const pattern of patterns) {
+        const match = version.match(pattern);
+        if (match) {
+          if (pattern === patterns[1]) {
+            // build-number 格式，转换为 0.0.build
+            version = `0.0.${match[1]}`;
+            console.log(`   Normalized to: ${version}`);
+          } else if (pattern === patterns[2]) {
+            // 纯数字，转换为 0.0.number
+            version = `0.0.${match[1]}`;
+            console.log(`   Normalized to: ${version}`);
+          } else {
+            version = `${match[1]}.${match[2]}.${match[3]}`;
+          }
+          matched = true;
+          break;
+        }
+      }
+      
+      if (!matched) {
+        // 如果完全无法解析，使用 tag 名称但转换为 0.0.0
+        console.warn(`⚠️  Unable to parse version "${version}", using 0.0.1`);
+        version = '0.0.1';
       }
     }
     

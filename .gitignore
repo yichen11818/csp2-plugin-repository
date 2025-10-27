@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
+# package-lock.json 需要提交以供 GitHub Actions 使用
 
 # Logs
 *.log

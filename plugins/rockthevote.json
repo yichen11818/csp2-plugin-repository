@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "rockthevote",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "abnerfs",
+    "repo": "cs2-rockthevote",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "RockTheVote.zip",
+  "metadata": {
+    "name": "RockTheVote",
+    "descriptionZh": "CS2 地图投票插件，支持玩家投票更换地图",
+    "category": "admin",
+    "tags": ["vote", "map", "admin", "mapchange"],
+    "framework": "counterstrikesharp",
+    "featured": false
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["RockTheVote/*"]
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "community-contributor",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "Essential map voting plugin"
+  }
+}
+

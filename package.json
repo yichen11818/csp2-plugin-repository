@@ -1,0 +1,30 @@
+{
+  "name": "csp2-plugin-repository",
+  "version": "1.0.0",
+  "description": "CSP2 Plugin Repository - Automated plugin manifest generation",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate-manifest.js",
+    "validate": "node scripts/validate.js",
+    "check-links": "node scripts/check-links.js",
+    "test": "npm run validate && npm run check-links"
+  },
+  "keywords": [
+    "cs2",
+    "counterstrike",
+    "plugins",
+    "repository"
+  ],
+  "author": "CSP2 Team",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "ajv": "^8.12.0",
+    "chalk": "^4.1.2",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

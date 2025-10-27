@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "weaponpaints",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "Nereziel",
+    "repo": "cs2-WeaponPaints",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "WeaponPaints.zip",
+  "metadata": {
+    "name": "WeaponPaints",
+    "descriptionZh": "CS2 高级武器皮肤系统，支持数据库存储和自定义皮肤",
+    "category": "gameplay",
+    "tags": ["skins", "weapons", "customization", "database", "mysql"],
+    "framework": "counterstrikesharp",
+    "featured": true
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["WeaponPaints/*"]
+  },
+  "verification": {
+    "method": "github-verified",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "Popular plugin with active development and good community support"
+  }
+}
+

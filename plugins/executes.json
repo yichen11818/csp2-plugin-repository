@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "executes",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "zwolof",
+    "repo": "cs2-executes",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "Executes.zip",
+  "metadata": {
+    "name": "CS2 Executes",
+    "descriptionZh": "执行点练习插件，模拟真实比赛进攻场景",
+    "category": "utility",
+    "tags": ["practice", "training", "executes", "competitive"],
+    "framework": "counterstrikesharp",
+    "featured": true
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["Executes/*"]
+  },
+  "verification": {
+    "method": "github-verified",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "High-quality practice plugin for team training"
+  }
+}
+

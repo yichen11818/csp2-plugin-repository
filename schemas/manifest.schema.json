@@ -1,0 +1,412 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/your-org/csp2-plugin-repository/main/schemas/manifest.schema.json",
+  "title": "CSP2 Plugin Manifest",
+  "description": "Schema for CSP2 plugin repository manifest",
+  "type": "object",
+  "required": ["version", "lastUpdated", "plugins"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Manifest format version",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp in ISO 8601 format"
+    },
+    "updateInterval": {
+      "type": "integer",
+      "description": "Recommended cache duration in seconds",
+      "default": 3600,
+      "minimum": 300
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/category"
+      }
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/plugin"
+      }
+    },
+    "statistics": {
+      "$ref": "#/definitions/statistics"
+    }
+  },
+  "definitions": {
+    "category": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nameZh": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "descriptionZh": {
+          "type": "string"
+        }
+      }
+    },
+    "plugin": {
+      "type": "object",
+      "required": ["id", "name", "author", "description", "framework", "version", "download"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique plugin identifier (lowercase, alphanumeric and hyphens only)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the plugin"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "URL-friendly slug"
+        },
+        "author": {
+          "$ref": "#/definitions/author"
+        },
+        "description": {
+          "type": "string",
+          "description": "Plugin description in English"
+        },
+        "descriptionZh": {
+          "type": "string",
+          "description": "Plugin description in Chinese"
+        },
+        "framework": {
+          "type": "string",
+          "enum": ["counterstrikesharp", "metamod", "sourcemod"],
+          "description": "Required plugin framework"
+        },
+        "frameworkVersion": {
+          "type": "string",
+          "description": "Required framework version (semver range)"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Plugin IDs that this plugin depends on"
+        },
+        "category": {
+          "type": "string",
+          "description": "Primary category"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+",
+          "description": "Semantic version"
+        },
+        "changelog": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to changelog or release notes"
+        },
+        "downloads": {
+          "$ref": "#/definitions/downloadStats"
+        },
+        "rating": {
+          "$ref": "#/definitions/rating"
+        },
+        "repository": {
+          "$ref": "#/definitions/repository"
+        },
+        "download": {
+          "$ref": "#/definitions/downloadInfo"
+        },
+        "installation": {
+          "$ref": "#/definitions/installation"
+        },
+        "configuration": {
+          "$ref": "#/definitions/configuration"
+        },
+        "media": {
+          "$ref": "#/definitions/media"
+        },
+        "links": {
+          "$ref": "#/definitions/links"
+        },
+        "verified": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the plugin is officially verified"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to feature this plugin"
+        },
+        "officialSupport": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the plugin has official support"
+        },
+        "compatibility": {
+          "$ref": "#/definitions/compatibility"
+        },
+        "metadata": {
+          "$ref": "#/definitions/metadata"
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string"
+        },
+        "discord": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "downloadStats": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lastMonth": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "rating": {
+      "type": "object",
+      "properties": {
+        "average": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "repository": {
+      "type": "object",
+      "required": ["type", "owner", "repo"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["github"]
+        },
+        "owner": {
+          "type": "string"
+        },
+        "repo": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string",
+          "default": "main"
+        }
+      }
+    },
+    "downloadInfo": {
+      "type": "object",
+      "required": ["url", "size"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "File size in bytes"
+        },
+        "checksum": {
+          "type": "object",
+          "properties": {
+            "algorithm": {
+              "type": "string",
+              "enum": ["sha256", "md5"]
+            },
+            "hash": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "installation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["extract", "copy", "custom"]
+        },
+        "targetPath": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "postInstall": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "string",
+          "format": "uri"
+        },
+        "banner": {
+          "type": "string",
+          "format": "uri"
+        },
+        "screenshots": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "video": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "homepage": {
+          "type": "string",
+          "format": "uri"
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        },
+        "issues": {
+          "type": "string",
+          "format": "uri"
+        },
+        "discord": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "cs2Version": {
+          "type": "string",
+          "description": "CS2 version requirement (semver range)"
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["windows", "linux"]
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "addedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastChecked": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "totalPlugins": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verifiedPlugins": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalDownloads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "activeAuthors": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}
+

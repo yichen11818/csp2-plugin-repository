@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "matchzy",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "shobhit-pathak",
+    "repo": "MatchZy",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "MatchZy.zip",
+  "metadata": {
+    "name": "MatchZy",
+    "descriptionZh": "CS2 竞技比赛管理插件，支持完整的比赛流程和统计",
+    "category": "admin",
+    "tags": ["match", "competitive", "tournament", "admin", "pug"],
+    "framework": "counterstrikesharp",
+    "featured": true
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["MatchZy/*"]
+  },
+  "verification": {
+    "method": "github-verified",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "Essential plugin for competitive CS2 matches"
+  }
+}
+

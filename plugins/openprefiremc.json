@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "openprefiremc",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "lengran",
+    "repo": "OpenPrefirePrac",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "OpenPrefirePrac.zip",
+  "metadata": {
+    "name": "OpenPrefirePrac",
+    "descriptionZh": "CS2 练习模式插件，支持预瞄和定位练习",
+    "category": "utility",
+    "tags": ["practice", "training", "aim", "prefire"],
+    "framework": "counterstrikesharp",
+    "featured": false
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["OpenPrefirePrac/*"]
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "community-contributor",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "Community verified practice plugin"
+  }
+}
+

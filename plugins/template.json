@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "your-plugin-id",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "your-github-username",
+    "repo": "your-plugin-repository",
+    "releaseType": "latest"
+  },
+  "downloadPattern": "YourPluginName.zip",
+  "metadata": {
+    "name": "Your Plugin Display Name",
+    "descriptionZh": "插件的中文描述（可选但推荐）",
+    "category": "gameplay",
+    "tags": ["tag1", "tag2", "tag3"],
+    "framework": "counterstrikesharp",
+    "featured": false
+  },
+  "installation": {
+    "type": "extract",
+    "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
+    "files": ["YourPluginName/*"]
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "your-github-username",
+    "verifiedAt": "2025-10-27T00:00:00Z",
+    "notes": "Brief description of testing performed"
+  }
+}
+

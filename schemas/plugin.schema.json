@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/your-org/csp2-plugin-repository/main/schemas/plugin.schema.json",
+  "title": "CSP2 Plugin Configuration",
+  "description": "Schema for individual plugin configuration files",
+  "type": "object",
+  "required": ["id", "enabled", "repository"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique plugin identifier (must match filename without .json)"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this plugin is included in the manifest"
+    },
+    "autoUpdate": {
+      "type": "boolean",
+      "default": true,
+      "description": "Automatically update from GitHub releases"
+    },
+    "repository": {
+      "type": "object",
+      "required": ["type", "owner", "repo"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["github"],
+          "description": "Repository type (currently only GitHub is supported)"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Repository owner/organization"
+        },
+        "repo": {
+          "type": "string",
+          "description": "Repository name"
+        },
+        "releaseType": {
+          "type": "string",
+          "enum": ["latest", "prerelease", "tag"],
+          "default": "latest",
+          "description": "Which release to track"
+        },
+        "tagPattern": {
+          "type": "string",
+          "description": "Tag pattern to match (for releaseType: tag)"
+        }
+      }
+    },
+    "downloadPattern": {
+      "type": "string",
+      "description": "Pattern to match asset filename (e.g., 'PluginName.zip')"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata to override or supplement GitHub data",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "descriptionZh": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "framework": {
+          "type": "string",
+          "enum": ["counterstrikesharp", "metamod", "sourcemod"]
+        },
+        "featured": {
+          "type": "boolean"
+        }
+      }
+    },
+    "installation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["extract", "copy", "custom"]
+        },
+        "targetPath": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["github-verified", "manual", "community"]
+        },
+        "verifiedBy": {
+          "type": "string",
+          "description": "Who verified this plugin"
+        },
+        "verifiedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

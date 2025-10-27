@@ -43,27 +43,19 @@ jobs:
             const output = fs.readFileSync('links.log', 'utf-8');
             
             const title = '🔗 Broken Download Links Detected';
-            const body = `## Link Check Failed
             
-Some plugin download links or repository URLs are not accessible.
+            let body = '## Link Check Failed\n\n';
+            body += 'Some plugin download links or repository URLs are not accessible.\n\n';
+            body += '### Details\n\n';
+            body += '```\n' + output + '\n```\n\n';
+            body += '### Action Required\n\n';
+            body += 'Please review the failed links and either:\n';
+            body += '1. Update the plugin configuration if the URL has changed\n';
+            body += '2. Disable the plugin if it is no longer available\n';
+            body += '3. Contact the plugin author\n\n';
+            body += '---\n';
+            body += '*This issue was automatically created by the link checker workflow.*';
 
-### Details
-
-\`\`\`
-${output}
-\`\`\`
-
-### Action Required
-
-Please review the failed links and either:
-1. Update the plugin configuration if the URL has changed
-2. Disable the plugin if it's no longer available
-3. Contact the plugin author
-
----
-*This issue was automatically created by the link checker workflow.*`;
-
-            // Check if similar issue exists
             const issues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,

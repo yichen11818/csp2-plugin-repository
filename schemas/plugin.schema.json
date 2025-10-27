@@ -92,17 +92,62 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["extract", "copy", "custom"]
+          "enum": ["extract", "copy", "custom"],
+          "description": "Installation type"
         },
         "targetPath": {
-          "type": "string"
+          "type": "string",
+          "description": "Target directory (for simple installations, relative to server root)"
         },
         "files": {
           "type": "array",
           "items": {
             "type": "string"
+          },
+          "description": "Files to copy (for simple installations, supports wildcards)"
+        },
+        "mappings": {
+          "type": "array",
+          "description": "File mapping rules (for complex installations, takes precedence over targetPath + files)",
+          "items": {
+            "type": "object",
+            "required": ["source", "target"],
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "Source path pattern in ZIP (supports * and ** wildcards, e.g., 'gamedata/*', 'MyPlugin/**/*.dll')"
+              },
+              "target": {
+                "type": "string",
+                "description": "Target directory relative to server root (e.g., 'game/csgo/addons/counterstrikesharp/gamedata')"
+              },
+              "recursive": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether to copy subdirectories recursively"
+              },
+              "exclude": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Patterns to exclude from copying"
+              }
+            }
           }
+        },
+        "requiresRestart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the server needs to be restarted after installation"
         }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "List of plugin IDs that this plugin depends on",
+      "items": {
+        "type": "string"
       }
     },
     "verification": {

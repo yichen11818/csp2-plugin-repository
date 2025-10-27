@@ -2,13 +2,13 @@
 
 > Official plugin repository for CSP2 (Counter-Strike 2 Server Panel)
 
-[![Update Manifest](https://github.com/your-org/csp2-plugin-repository/actions/workflows/update-manifest.yml/badge.svg)](https://github.com/your-org/csp2-plugin-repository/actions/workflows/update-manifest.yml)
-[![Validate Plugins](https://github.com/your-org/csp2-plugin-repository/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/your-org/csp2-plugin-repository/actions/workflows/validate-pr.yml)
+[![Update Manifest](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/update-manifest.yml/badge.svg)](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/update-manifest.yml)
+[![Validate Plugins](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/yichen11818/csp2-plugin-repository/actions/workflows/validate-pr.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📦 What is this?
 
-This repository contains the plugin marketplace metadata for [CSP2](https://github.com/your-org/csp2), a modern CS2 server management panel. It automatically tracks and indexes CS2 plugins from GitHub, making them easily installable through CSP2's GUI.
+This repository contains the plugin marketplace metadata for [CSP2](https://github.com/yichen11818/csp2), a modern CS2 server management panel. It automatically tracks and indexes CS2 plugins from GitHub, making them easily installable through CSP2's GUI.
 
 ## 🌟 Features
 
@@ -170,8 +170,8 @@ Full schema: [schemas/manifest.schema.json](schemas/manifest.schema.json)
 
 The manifest is available at multiple endpoints:
 
-- **GitHub Raw**: `https://raw.githubusercontent.com/your-org/csp2-plugin-repository/main/manifest.json`
-- **jsDelivr CDN** (recommended): `https://cdn.jsdelivr.net/gh/your-org/csp2-plugin-repository@main/manifest.json`
+- **GitHub Raw**: `https://raw.githubusercontent.com/yichen11818/csp2-plugin-repository/main/manifest.json`
+- **jsDelivr CDN** (recommended): `https://cdn.jsdelivr.net/gh/yichen11818/csp2-plugin-repository@main/manifest.json`
 
 CSP2 automatically uses the CDN endpoint for better performance.
 
@@ -187,7 +187,7 @@ CSP2 automatically uses the CDN endpoint for better performance.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/csp2-plugin-repository.git
+git clone https://github.com/yichen11818/csp2-plugin-repository.git
 cd csp2-plugin-repository
 
 # Install dependencies
@@ -218,7 +218,7 @@ npm test
 - [Contributing Guide](CONTRIBUTING.md) - How to submit plugins
 - [Plugin Schema](schemas/plugin.schema.json) - Plugin configuration format
 - [Manifest Schema](schemas/manifest.schema.json) - Generated manifest format
-- [CSP2 Documentation](https://github.com/your-org/csp2/tree/main/docs) - Main project docs
+- [CSP2 Documentation](https://github.com/yichen11818/csp2/tree/main/docs) - Main project docs
 
 ## 🤝 Contributing
 
@@ -240,9 +240,8 @@ Individual plugins have their own licenses - please check each plugin's reposito
 
 ## 💬 Community
 
-- **Discord**: [Join our server](https://discord.gg/your-invite)
-- **Issues**: [GitHub Issues](https://github.com/your-org/csp2-plugin-repository/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/csp2-plugin-repository/discussions)
+- **Issues**: [GitHub Issues](https://github.com/yichen11818/csp2-plugin-repository/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yichen11818/csp2-plugin-repository/discussions)
 
 ## 🙏 Acknowledgments
 

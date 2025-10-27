@@ -88,8 +88,25 @@ async function fetchLatestRelease(owner, repo) {
       repo
     });
 
+    // 提取版本号，处理各种格式
+    let version = data.tag_name.replace(/^v/, '');  // 移除 'v' 前缀
+    
+    // 如果不符合 semver 格式，尝试修复
+    if (!/^\d+\.\d+\.\d+/.test(version)) {
+      console.warn(`⚠️  Non-semver version "${version}" detected, attempting to normalize`);
+      // 尝试从 tag 中提取版本号
+      const match = version.match(/(\d+)\.(\d+)\.(\d+)/);
+      if (match) {
+        version = `${match[1]}.${match[2]}.${match[3]}`;
+      } else {
+        // 如果完全无法解析，使用默认版本
+        console.warn(`⚠️  Unable to parse version "${version}", using 0.0.0`);
+        version = '0.0.0';
+      }
+    }
+    
     return {
-      version: data.tag_name.replace(/^v/, ''),
+      version,
       publishedAt: data.published_at,
       changelog: data.html_url,
       body: data.body,
@@ -202,15 +219,15 @@ async function buildPluginEntry(config) {
       documentation: `https://github.com/${repository.owner}/${repository.repo}#readme`
     },
     media: {
-      icon: metadata.icon || '',
-      banner: metadata.banner || '',
+      ...(metadata.icon && { icon: metadata.icon }),
+      ...(metadata.banner && { banner: metadata.banner }),
       screenshots: metadata.screenshots || []
     },
     links: {
       homepage: repoInfo?.homepage || `https://github.com/${repository.owner}/${repository.repo}`,
       documentation: `https://github.com/${repository.owner}/${repository.repo}/wiki`,
       issues: `https://github.com/${repository.owner}/${repository.repo}/issues`,
-      discord: metadata.discord || ''
+      ...(metadata.discord && { discord: metadata.discord })
     },
     verified: config.verification?.method === 'github-verified',
     featured: metadata.featured || false,

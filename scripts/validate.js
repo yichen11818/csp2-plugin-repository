@@ -26,6 +26,24 @@ addFormats(ajv);  // 添加日期时间等格式支持
 let totalErrors = 0;
 let totalWarnings = 0;
 
+// Load schemas once to avoid re-compilation
+let pluginSchemaValidator = null;
+let manifestSchemaValidator = null;
+
+async function loadSchemas() {
+  if (!pluginSchemaValidator) {
+    const schemaContent = await fs.readFile(PLUGIN_SCHEMA_PATH, 'utf-8');
+    const schema = JSON.parse(schemaContent);
+    pluginSchemaValidator = ajv.compile(schema);
+  }
+  
+  if (!manifestSchemaValidator) {
+    const schemaContent = await fs.readFile(MANIFEST_SCHEMA_PATH, 'utf-8');
+    const schema = JSON.parse(schemaContent);
+    manifestSchemaValidator = ajv.compile(schema);
+  }
+}
+
 /**
  * Validate a single plugin configuration
  */
@@ -47,17 +65,12 @@ async function validatePluginConfig(filePath) {
       return false;
     }
 
-    // Load schema
-    const schemaContent = await fs.readFile(PLUGIN_SCHEMA_PATH, 'utf-8');
-    const schema = JSON.parse(schemaContent);
-
-    // Validate against schema
-    const validate = ajv.compile(schema);
-    const valid = validate(config);
+    // Validate against schema (using cached validator)
+    const valid = pluginSchemaValidator(config);
 
     if (!valid) {
       console.error(`${chalk.red('✗')} Schema validation failed:`);
-      validate.errors.forEach(error => {
+      pluginSchemaValidator.errors.forEach(error => {
         console.error(`  ${chalk.red('•')} ${error.instancePath} ${error.message}`);
       });
       totalErrors++;
@@ -114,6 +127,9 @@ async function validatePluginConfig(filePath) {
 async function validateAllPlugins() {
   console.log(chalk.bold('\n🔍 Validating Plugin Configurations\n'));
 
+  // Load schemas first
+  await loadSchemas();
+
   try {
     const files = await fs.readdir(PLUGINS_DIR);
     const jsonFiles = files.filter(f => f.endsWith('.json'));
@@ -150,6 +166,9 @@ async function validateAllPlugins() {
 async function validateManifest() {
   console.log(chalk.bold('\n🔍 Validating Manifest\n'));
 
+  // Load schemas if not already loaded
+  await loadSchemas();
+
   try {
     // Check if manifest exists
     try {
@@ -170,17 +189,12 @@ async function validateManifest() {
       return false;
     }
 
-    // Load schema
-    const schemaContent = await fs.readFile(MANIFEST_SCHEMA_PATH, 'utf-8');
-    const schema = JSON.parse(schemaContent);
-
-    // Validate
-    const validate = ajv.compile(schema);
-    const valid = validate(manifest);
+    // Validate (using cached validator)
+    const valid = manifestSchemaValidator(manifest);
 
     if (!valid) {
       console.error(`${chalk.red('✗')} Schema validation failed:`);
-      validate.errors.forEach(error => {
+      manifestSchemaValidator.errors.forEach(error => {
         console.error(`  ${chalk.red('•')} ${error.instancePath} ${error.message}`);
       });
       totalErrors++;

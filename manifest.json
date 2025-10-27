@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2025-10-27T18:29:42.602Z",
+  "lastUpdated": "2025-10-27T19:54:46.187Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -76,10 +76,24 @@
       },
       "installation": {
         "type": "extract",
-        "targetPath": "game/csgo/addons/counterstrikesharp/plugins",
-        "files": [
-          "WeaponPaints/*"
-        ]
+        "mappings": [
+          {
+            "source": "addons/counterstrikesharp/plugins/WeaponPaints/*",
+            "target": "game/csgo/addons/counterstrikesharp/plugins/WeaponPaints",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/gamedata/*",
+            "target": "game/csgo/addons/counterstrikesharp/gamedata",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/configs/plugins/WeaponPaints/*",
+            "target": "game/csgo/addons/counterstrikesharp/configs/plugins/WeaponPaints",
+            "recursive": true
+          }
+        ],
+        "requiresRestart": true
       },
       "configuration": {
         "required": false,
@@ -107,7 +121,7 @@
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
         "updatedAt": "2025-10-17T22:59:04Z",
-        "lastChecked": "2025-10-27T18:29:41.601Z"
+        "lastChecked": "2025-10-27T19:54:45.186Z"
       }
     }
   ],

@@ -80,10 +80,17 @@
         },
         "framework": {
           "type": "string",
-          "enum": ["counterstrikesharp", "metamod", "sourcemod"]
+          "enum": ["counterstrikesharp", "metamod", "sourcemod"],
+          "description": "Required plugin framework"
+        },
+        "frameworkVersion": {
+          "type": "string",
+          "description": "Required framework version (e.g., '>=1.0.0', '^2.0.0')",
+          "pattern": "^(>=|>|<=|<|\\^|~)?\\d+\\.\\d+\\.\\d+.*$"
         },
         "featured": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether this plugin is featured"
         }
       }
     },

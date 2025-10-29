@@ -1,0 +1,53 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "anybaselib-cs2",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "NickFox007",
+    "repo": "AnyBaseLibCS2",
+    "releaseType": "latest"
+  },
+  "downloadPattern": ".zip",
+  "metadata": {
+    "name": "AnyBaseLib",
+    "description": "Easy-connecting database API for SQLite/MySQL/PostgreSQL - Simplifies database operations for CS2 plugins",
+    "descriptionZh": "简易数据库连接 API，支持 SQLite/MySQL/PostgreSQL - 简化 CS2 插件的数据库操作",
+    "category": "utility",
+    "tags": ["database", "api", "library", "mysql", "sqlite", "postgresql"],
+    "framework": "counterstrikesharp",
+    "frameworkVersion": ">=1.0.0",
+    "featured": true
+  },
+  "dependencies": [],
+  "installation": {
+    "type": "extract",
+    "mappings": [
+      {
+        "source": "addons/counterstrikesharp/shared/AnyBaseLib/*",
+        "target": "game/csgo/addons/counterstrikesharp/shared/AnyBaseLib",
+        "recursive": true
+      }
+    ],
+    "requiresRestart": false,
+    "postInstallNotes": "AnyBaseLib 是一个数据库 API 库。安装后，其他插件可以使用它来连接 SQLite、MySQL 或 PostgreSQL 数据库。建议安装后重启服务器。"
+  },
+  "configuration": {
+    "required": false,
+    "files": [],
+    "documentation": "https://github.com/NickFox007/AnyBaseLibCS2#readme"
+  },
+  "links": {
+    "homepage": "https://github.com/NickFox007/AnyBaseLibCS2",
+    "documentation": "https://github.com/NickFox007/AnyBaseLibCS2#readme",
+    "issues": "https://github.com/NickFox007/AnyBaseLibCS2/issues"
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-29T00:00:00Z",
+    "notes": "Essential database library for CS2 plugins. Provides unified API for SQLite/MySQL/PostgreSQL. This is a dependency library used by many plugins like WeaponPaints."
+  }
+}
+

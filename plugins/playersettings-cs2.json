@@ -1,0 +1,60 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "playersettings-cs2",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "NickFox007",
+    "repo": "PlayerSettingsCS2",
+    "releaseType": "latest"
+  },
+  "downloadPattern": ".zip",
+  "metadata": {
+    "name": "PlayerSettings",
+    "description": "ClientCookies analogue for CS2 - Save and restore player preferences across sessions",
+    "descriptionZh": "CS2 的 ClientCookies 替代品 - 保存和恢复玩家设置偏好",
+    "category": "utility",
+    "tags": ["settings", "cookies", "preferences", "api", "library"],
+    "framework": "counterstrikesharp",
+    "frameworkVersion": ">=1.0.0",
+    "featured": true
+  },
+  "dependencies": [],
+  "installation": {
+    "type": "extract",
+    "mappings": [
+      {
+        "source": "addons/counterstrikesharp/plugins/PlayerSettings/*",
+        "target": "game/csgo/addons/counterstrikesharp/plugins/PlayerSettings",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/shared/PlayerSettings/*",
+        "target": "game/csgo/addons/counterstrikesharp/shared/PlayerSettings",
+        "recursive": true
+      }
+    ],
+    "requiresRestart": false,
+    "postInstallNotes": "PlayerSettings 是一个 API 库，其他插件可以通过它保存玩家设置。建议安装后重启服务器以确保所有插件能正确加载。"
+  },
+  "configuration": {
+    "required": false,
+    "files": [
+      "addons/counterstrikesharp/configs/plugins/PlayerSettings/PlayerSettings.json"
+    ],
+    "documentation": "https://github.com/NickFox007/PlayerSettingsCS2#readme"
+  },
+  "links": {
+    "homepage": "https://github.com/NickFox007/PlayerSettingsCS2",
+    "documentation": "https://github.com/NickFox007/PlayerSettingsCS2#readme",
+    "issues": "https://github.com/NickFox007/PlayerSettingsCS2/issues"
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-29T00:00:00Z",
+    "notes": "Popular library plugin for saving player preferences. Used by many other plugins. Note: This is a dependency library, not a standalone plugin."
+  }
+}
+

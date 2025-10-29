@@ -1,0 +1,62 @@
+{
+  "$schema": "../schemas/plugin.schema.json",
+  "id": "menumanager-cs2",
+  "enabled": true,
+  "autoUpdate": true,
+  "repository": {
+    "type": "github",
+    "owner": "NickFox007",
+    "repo": "MenuManagerCS2",
+    "releaseType": "latest"
+  },
+  "downloadPattern": ".zip",
+  "metadata": {
+    "name": "MenuManager",
+    "description": "Advanced menu system API for CS2 plugins - Create interactive menus with buttons and callbacks",
+    "descriptionZh": "CS2 高级菜单系统 API - 为插件创建交互式菜单和按钮",
+    "category": "utility",
+    "tags": ["menu", "ui", "api", "library", "buttons", "interactive"],
+    "framework": "counterstrikesharp",
+    "frameworkVersion": ">=1.0.0",
+    "featured": true
+  },
+  "dependencies": [
+    "playersettings-cs2"
+  ],
+  "installation": {
+    "type": "extract",
+    "mappings": [
+      {
+        "source": "addons/counterstrikesharp/plugins/MenuManagerCore/*",
+        "target": "game/csgo/addons/counterstrikesharp/plugins/MenuManagerCore",
+        "recursive": true
+      },
+      {
+        "source": "addons/counterstrikesharp/shared/MenuManagerApi/*",
+        "target": "game/csgo/addons/counterstrikesharp/shared/MenuManagerApi",
+        "recursive": true
+      }
+    ],
+    "requiresRestart": false,
+    "postInstallNotes": "MenuManager 是一个菜单系统 API 库。安装后，插件开发者可以使用它创建玩家交互菜单。建议安装后重启服务器。参考文档：https://csdevs.net/resources/menumanager.726/"
+  },
+  "configuration": {
+    "required": false,
+    "files": [
+      "addons/counterstrikesharp/configs/plugins/MenuManagerCore/MenuManagerCore.json"
+    ],
+    "documentation": "https://csdevs.net/resources/menumanager.726/"
+  },
+  "links": {
+    "homepage": "https://github.com/NickFox007/MenuManagerCS2",
+    "documentation": "https://csdevs.net/resources/menumanager.726/",
+    "issues": "https://github.com/NickFox007/MenuManagerCS2/issues"
+  },
+  "verification": {
+    "method": "community",
+    "verifiedBy": "csp2-team",
+    "verifiedAt": "2025-10-29T00:00:00Z",
+    "notes": "Popular menu system library for CS2. Depends on PlayerSettings. Documentation available at CSDevs.net. Note: MenuWhileOpenMenu is set to false by default to prevent movement exploits."
+  }
+}
+

@@ -21,10 +21,9 @@
     "featured": true
   },
   "dependencies": [
-    "cs2-tags",
-    "cs2-customvotes",
-    "sharptimerz",
-    "databaseconnection"
+    "anybaselib-cs2",
+    "menumanager-cs2",
+    "playersettings-cs2"
   ],
   "installation": {
     "type": "extract",

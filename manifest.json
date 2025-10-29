@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2025-10-29T01:41:35.716Z",
+  "lastUpdated": "2025-10-29T03:09:04.878Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -33,6 +33,264 @@
     }
   ],
   "plugins": [
+    {
+      "id": "anybaselib-cs2",
+      "name": "AnyBaseLib",
+      "slug": "anybaselib-cs2",
+      "author": {
+        "name": "NickFox007",
+        "github": "NickFox007"
+      },
+      "description": "Easy-connecting database API for SQLite/MySQL/PostgreSQL - Simplifies database operations for CS2 plugins",
+      "descriptionZh": "简易数据库连接 API，支持 SQLite/MySQL/PostgreSQL - 简化 CS2 插件的数据库操作",
+      "framework": "counterstrikesharp",
+      "frameworkVersion": ">=1.0.0",
+      "dependencies": [],
+      "category": "utility",
+      "tags": [
+        "database",
+        "api",
+        "library",
+        "mysql",
+        "sqlite",
+        "postgresql"
+      ],
+      "version": "0.9.4",
+      "changelog": "https://github.com/NickFox007/AnyBaseLibCS2/releases/tag/0.9.4",
+      "downloads": {
+        "total": 0,
+        "lastMonth": 0
+      },
+      "rating": {
+        "average": 0,
+        "count": 0
+      },
+      "repository": {
+        "type": "github",
+        "owner": "NickFox007",
+        "repo": "AnyBaseLibCS2",
+        "branch": "main"
+      },
+      "download": {
+        "url": "https://github.com/NickFox007/AnyBaseLibCS2/releases/download/0.9.4/AnyBaseLib.zip",
+        "size": 13777417
+      },
+      "installation": {
+        "type": "extract",
+        "mappings": [
+          {
+            "source": "addons/counterstrikesharp/shared/AnyBaseLib/*",
+            "target": "game/csgo/addons/counterstrikesharp/shared/AnyBaseLib",
+            "recursive": true
+          }
+        ],
+        "requiresRestart": false,
+        "postInstallNotes": "AnyBaseLib 是一个数据库 API 库。安装后，其他插件可以使用它来连接 SQLite、MySQL 或 PostgreSQL 数据库。建议安装后重启服务器。"
+      },
+      "configuration": {
+        "required": false,
+        "files": [],
+        "documentation": "https://github.com/NickFox007/AnyBaseLibCS2#readme"
+      },
+      "media": {
+        "screenshots": []
+      },
+      "links": {
+        "homepage": "https://github.com/NickFox007/AnyBaseLibCS2",
+        "documentation": "https://github.com/NickFox007/AnyBaseLibCS2/wiki",
+        "issues": "https://github.com/NickFox007/AnyBaseLibCS2/issues"
+      },
+      "verified": false,
+      "featured": true,
+      "officialSupport": false,
+      "compatibility": {
+        "cs2Version": ">=1.0.0",
+        "platforms": [
+          "windows",
+          "linux"
+        ]
+      },
+      "metadata": {
+        "addedAt": "2025-10-29T00:00:00Z",
+        "updatedAt": "2025-07-17T19:10:58Z",
+        "lastChecked": "2025-10-29T03:08:59.896Z"
+      }
+    },
+    {
+      "id": "menumanager-cs2",
+      "name": "MenuManager",
+      "slug": "menumanager-cs2",
+      "author": {
+        "name": "NickFox007",
+        "github": "NickFox007"
+      },
+      "description": "Advanced menu system API for CS2 plugins - Create interactive menus with buttons and callbacks",
+      "descriptionZh": "CS2 高级菜单系统 API - 为插件创建交互式菜单和按钮",
+      "framework": "counterstrikesharp",
+      "frameworkVersion": ">=1.0.0",
+      "dependencies": [],
+      "category": "utility",
+      "tags": [
+        "menu",
+        "ui",
+        "api",
+        "library",
+        "buttons",
+        "interactive"
+      ],
+      "version": "1.4.1",
+      "changelog": "https://github.com/NickFox007/MenuManagerCS2/releases/tag/1.4.1",
+      "downloads": {
+        "total": 0,
+        "lastMonth": 0
+      },
+      "rating": {
+        "average": 0,
+        "count": 0
+      },
+      "repository": {
+        "type": "github",
+        "owner": "NickFox007",
+        "repo": "MenuManagerCS2",
+        "branch": "main"
+      },
+      "download": {
+        "url": "https://github.com/NickFox007/MenuManagerCS2/releases/download/1.4.1/MenuManager.zip",
+        "size": 55162
+      },
+      "installation": {
+        "type": "extract",
+        "mappings": [
+          {
+            "source": "addons/counterstrikesharp/plugins/MenuManagerCore/*",
+            "target": "game/csgo/addons/counterstrikesharp/plugins/MenuManagerCore",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/shared/MenuManagerApi/*",
+            "target": "game/csgo/addons/counterstrikesharp/shared/MenuManagerApi",
+            "recursive": true
+          }
+        ],
+        "requiresRestart": false,
+        "postInstallNotes": "MenuManager 是一个菜单系统 API 库。安装后，插件开发者可以使用它创建玩家交互菜单。建议安装后重启服务器。参考文档：https://csdevs.net/resources/menumanager.726/"
+      },
+      "configuration": {
+        "required": false,
+        "files": [],
+        "documentation": "https://github.com/NickFox007/MenuManagerCS2#readme"
+      },
+      "media": {
+        "screenshots": []
+      },
+      "links": {
+        "homepage": "https://github.com/NickFox007/MenuManagerCS2",
+        "documentation": "https://github.com/NickFox007/MenuManagerCS2/wiki",
+        "issues": "https://github.com/NickFox007/MenuManagerCS2/issues"
+      },
+      "verified": false,
+      "featured": true,
+      "officialSupport": false,
+      "compatibility": {
+        "cs2Version": ">=1.0.0",
+        "platforms": [
+          "windows",
+          "linux"
+        ]
+      },
+      "metadata": {
+        "addedAt": "2025-10-29T00:00:00Z",
+        "updatedAt": "2025-02-28T19:58:33Z",
+        "lastChecked": "2025-10-29T03:09:01.253Z"
+      }
+    },
+    {
+      "id": "playersettings-cs2",
+      "name": "PlayerSettings",
+      "slug": "playersettings-cs2",
+      "author": {
+        "name": "NickFox007",
+        "github": "NickFox007"
+      },
+      "description": "ClientCookies analogue for CS2 - Save and restore player preferences across sessions",
+      "descriptionZh": "CS2 的 ClientCookies 替代品 - 保存和恢复玩家设置偏好",
+      "framework": "counterstrikesharp",
+      "frameworkVersion": ">=1.0.0",
+      "dependencies": [],
+      "category": "utility",
+      "tags": [
+        "settings",
+        "cookies",
+        "preferences",
+        "api",
+        "library"
+      ],
+      "version": "0.9.3",
+      "changelog": "https://github.com/NickFox007/PlayerSettingsCS2/releases/tag/0.9.3",
+      "downloads": {
+        "total": 0,
+        "lastMonth": 0
+      },
+      "rating": {
+        "average": 0,
+        "count": 0
+      },
+      "repository": {
+        "type": "github",
+        "owner": "NickFox007",
+        "repo": "PlayerSettingsCS2",
+        "branch": "main"
+      },
+      "download": {
+        "url": "https://github.com/NickFox007/PlayerSettingsCS2/releases/download/0.9.3/PlayerSettings.zip",
+        "size": 43760
+      },
+      "installation": {
+        "type": "extract",
+        "mappings": [
+          {
+            "source": "addons/counterstrikesharp/plugins/PlayerSettings/*",
+            "target": "game/csgo/addons/counterstrikesharp/plugins/PlayerSettings",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/shared/PlayerSettings/*",
+            "target": "game/csgo/addons/counterstrikesharp/shared/PlayerSettings",
+            "recursive": true
+          }
+        ],
+        "requiresRestart": false,
+        "postInstallNotes": "PlayerSettings 是一个 API 库，其他插件可以通过它保存玩家设置。建议安装后重启服务器以确保所有插件能正确加载。"
+      },
+      "configuration": {
+        "required": false,
+        "files": [],
+        "documentation": "https://github.com/NickFox007/PlayerSettingsCS2#readme"
+      },
+      "media": {
+        "screenshots": []
+      },
+      "links": {
+        "homepage": "https://github.com/NickFox007/PlayerSettingsCS2",
+        "documentation": "https://github.com/NickFox007/PlayerSettingsCS2/wiki",
+        "issues": "https://github.com/NickFox007/PlayerSettingsCS2/issues"
+      },
+      "verified": false,
+      "featured": true,
+      "officialSupport": false,
+      "compatibility": {
+        "cs2Version": ">=1.0.0",
+        "platforms": [
+          "windows",
+          "linux"
+        ]
+      },
+      "metadata": {
+        "addedAt": "2025-10-29T00:00:00Z",
+        "updatedAt": "2025-04-06T21:01:26Z",
+        "lastChecked": "2025-10-29T03:09:02.547Z"
+      }
+    },
     {
       "id": "weaponpaints",
       "name": "WeaponPaints",
@@ -121,14 +379,14 @@
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
         "updatedAt": "2025-10-17T22:59:04Z",
-        "lastChecked": "2025-10-29T01:41:34.714Z"
+        "lastChecked": "2025-10-29T03:09:03.877Z"
       }
     }
   ],
   "statistics": {
-    "totalPlugins": 1,
+    "totalPlugins": 4,
     "verifiedPlugins": 1,
     "totalDownloads": 0,
-    "activeAuthors": 1
+    "activeAuthors": 2
   }
 }

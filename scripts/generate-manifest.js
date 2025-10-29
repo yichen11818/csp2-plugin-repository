@@ -209,7 +209,7 @@ async function buildPluginEntry(config) {
     descriptionZh: metadata.descriptionZh || '',
     framework: metadata.framework || 'counterstrikesharp',
     frameworkVersion: metadata.frameworkVersion || '>=1.0.0',
-    dependencies: metadata.dependencies || [],
+    dependencies: config.dependencies || metadata.dependencies || [],  // 优先从顶层读取，兼容旧格式
     category: metadata.category || 'utility',
     tags: metadata.tags || [],
     version: release.version,

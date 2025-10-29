@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2025-10-29T06:31:50.998Z",
+  "lastUpdated": "2025-10-29T09:15:39.563Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -113,7 +113,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-07-17T19:10:58Z",
-        "lastChecked": "2025-10-29T06:31:46.032Z"
+        "lastChecked": "2025-10-29T09:15:34.484Z"
       }
     },
     {
@@ -128,7 +128,9 @@
       "descriptionZh": "CS2 高级菜单系统 API - 为插件创建交互式菜单和按钮",
       "framework": "counterstrikesharp",
       "frameworkVersion": ">=1.0.0",
-      "dependencies": [],
+      "dependencies": [
+        "playersettings-cs2"
+      ],
       "category": "utility",
       "tags": [
         "menu",
@@ -201,7 +203,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-02-28T19:58:33Z",
-        "lastChecked": "2025-10-29T06:31:47.312Z"
+        "lastChecked": "2025-10-29T09:15:35.798Z"
       }
     },
     {
@@ -288,7 +290,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-04-06T21:01:26Z",
-        "lastChecked": "2025-10-29T06:31:48.636Z"
+        "lastChecked": "2025-10-29T09:15:37.123Z"
       }
     },
     {
@@ -303,7 +305,11 @@
       "descriptionZh": "CS2 高级武器皮肤系统，支持数据库存储和自定义皮肤",
       "framework": "counterstrikesharp",
       "frameworkVersion": ">=1.0.0",
-      "dependencies": [],
+      "dependencies": [
+        "anybaselib-cs2",
+        "menumanager-cs2",
+        "playersettings-cs2"
+      ],
       "category": "gameplay",
       "tags": [
         "skins",
@@ -379,7 +385,7 @@
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
         "updatedAt": "2025-10-17T22:59:04Z",
-        "lastChecked": "2025-10-29T06:31:49.998Z"
+        "lastChecked": "2025-10-29T09:15:38.563Z"
       }
     }
   ],

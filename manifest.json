@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-01-24T12:42:25.784Z",
+  "lastUpdated": "2026-01-24T18:31:32.794Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -113,7 +113,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-07-17T19:10:58Z",
-        "lastChecked": "2026-01-24T12:42:20.641Z"
+        "lastChecked": "2026-01-24T18:31:27.633Z"
       }
     },
     {
@@ -203,7 +203,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-02-28T19:58:33Z",
-        "lastChecked": "2026-01-24T12:42:21.910Z"
+        "lastChecked": "2026-01-24T18:31:29.050Z"
       }
     },
     {
@@ -290,7 +290,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-04-06T21:01:26Z",
-        "lastChecked": "2026-01-24T12:42:23.181Z"
+        "lastChecked": "2026-01-24T18:31:30.400Z"
       }
     },
     {
@@ -318,8 +318,8 @@
         "database",
         "mysql"
       ],
-      "version": "0.0.406",
-      "changelog": "https://github.com/Nereziel/cs2-WeaponPaints/releases/tag/build-406",
+      "version": "0.0.408",
+      "changelog": "https://github.com/Nereziel/cs2-WeaponPaints/releases/tag/build-408",
       "downloads": {
         "total": 0,
         "lastMonth": 0
@@ -335,8 +335,8 @@
         "branch": "main"
       },
       "download": {
-        "url": "https://github.com/Nereziel/cs2-WeaponPaints/releases/download/build-406/WeaponPaints.zip",
-        "size": 6020800
+        "url": "https://github.com/Nereziel/cs2-WeaponPaints/releases/download/build-408/WeaponPaints.zip",
+        "size": 6021028
       },
       "installation": {
         "type": "extract",
@@ -384,8 +384,8 @@
       },
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
-        "updatedAt": "2026-01-23T16:06:24Z",
-        "lastChecked": "2026-01-24T12:42:24.784Z"
+        "updatedAt": "2026-01-24T13:25:01Z",
+        "lastChecked": "2026-01-24T18:31:31.793Z"
       }
     }
   ],

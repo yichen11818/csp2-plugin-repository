@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-04-10T07:43:04.344Z",
+  "lastUpdated": "2026-04-10T13:13:04.305Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -113,7 +113,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-07-17T19:10:58Z",
-        "lastChecked": "2026-04-10T07:42:59.377Z"
+        "lastChecked": "2026-04-10T13:12:59.305Z"
       }
     },
     {
@@ -203,7 +203,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-02-28T19:58:33Z",
-        "lastChecked": "2026-04-10T07:43:00.656Z"
+        "lastChecked": "2026-04-10T13:13:00.631Z"
       }
     },
     {
@@ -227,8 +227,8 @@
         "api",
         "library"
       ],
-      "version": "0.9.3",
-      "changelog": "https://github.com/NickFox007/PlayerSettingsCS2/releases/tag/0.9.3",
+      "version": "0.9.4",
+      "changelog": "https://github.com/NickFox007/PlayerSettingsCS2/releases/tag/0.9.4",
       "downloads": {
         "total": 0,
         "lastMonth": 0
@@ -244,8 +244,8 @@
         "branch": "main"
       },
       "download": {
-        "url": "https://github.com/NickFox007/PlayerSettingsCS2/releases/download/0.9.3/PlayerSettings.zip",
-        "size": 43760
+        "url": "https://github.com/NickFox007/PlayerSettingsCS2/releases/download/0.9.4/PlayerSettings.zip",
+        "size": 44432
       },
       "installation": {
         "type": "extract",
@@ -289,8 +289,8 @@
       },
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
-        "updatedAt": "2025-04-06T21:01:26Z",
-        "lastChecked": "2026-04-10T07:43:01.970Z"
+        "updatedAt": "2026-04-10T10:32:08Z",
+        "lastChecked": "2026-04-10T13:13:01.954Z"
       }
     },
     {
@@ -385,7 +385,7 @@
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
         "updatedAt": "2026-04-04T21:30:36Z",
-        "lastChecked": "2026-04-10T07:43:03.344Z"
+        "lastChecked": "2026-04-10T13:13:03.304Z"
       }
     }
   ],

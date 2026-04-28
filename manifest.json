@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-04-27T19:23:41.695Z",
+  "lastUpdated": "2026-04-28T03:20:28.392Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -113,7 +113,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-07-17T19:10:58Z",
-        "lastChecked": "2026-04-27T19:23:35.886Z"
+        "lastChecked": "2026-04-28T03:20:23.367Z"
       }
     },
     {
@@ -203,7 +203,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-02-28T19:58:33Z",
-        "lastChecked": "2026-04-27T19:23:37.431Z"
+        "lastChecked": "2026-04-28T03:20:24.680Z"
       }
     },
     {
@@ -290,14 +290,109 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2026-04-10T10:32:08Z",
-        "lastChecked": "2026-04-27T19:23:38.881Z"
+        "lastChecked": "2026-04-28T03:20:25.988Z"
+      }
+    },
+    {
+      "id": "weaponpaints",
+      "name": "WeaponPaints",
+      "slug": "weaponpaints",
+      "author": {
+        "name": "Nereziel",
+        "github": "Nereziel"
+      },
+      "description": "Advanced weapon skin system for CS2 with database storage and custom skin support",
+      "descriptionZh": "CS2 高级武器皮肤系统，支持数据库存储和自定义皮肤",
+      "framework": "counterstrikesharp",
+      "frameworkVersion": ">=1.0.0",
+      "dependencies": [
+        "anybaselib-cs2",
+        "menumanager-cs2",
+        "playersettings-cs2"
+      ],
+      "category": "gameplay",
+      "tags": [
+        "skins",
+        "weapons",
+        "customization",
+        "database",
+        "mysql"
+      ],
+      "version": "0.0.418",
+      "changelog": "https://github.com/Nereziel/cs2-WeaponPaints/releases/tag/build-418",
+      "downloads": {
+        "total": 0,
+        "lastMonth": 0
+      },
+      "rating": {
+        "average": 0,
+        "count": 0
+      },
+      "repository": {
+        "type": "github",
+        "owner": "Nereziel",
+        "repo": "cs2-WeaponPaints",
+        "branch": "main"
+      },
+      "download": {
+        "url": "https://github.com/Nereziel/cs2-WeaponPaints/releases/download/build-418/WeaponPaints.zip",
+        "size": 6282712
+      },
+      "installation": {
+        "type": "extract",
+        "mappings": [
+          {
+            "source": "addons/counterstrikesharp/plugins/WeaponPaints/*",
+            "target": "game/csgo/addons/counterstrikesharp/plugins/WeaponPaints",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/gamedata/*",
+            "target": "game/csgo/addons/counterstrikesharp/gamedata",
+            "recursive": true
+          },
+          {
+            "source": "addons/counterstrikesharp/configs/plugins/WeaponPaints/*",
+            "target": "game/csgo/addons/counterstrikesharp/configs/plugins/WeaponPaints",
+            "recursive": true
+          }
+        ],
+        "requiresRestart": true
+      },
+      "configuration": {
+        "required": false,
+        "files": [],
+        "documentation": "https://github.com/Nereziel/cs2-WeaponPaints#readme"
+      },
+      "media": {
+        "screenshots": []
+      },
+      "links": {
+        "homepage": "https://github.com/Nereziel/cs2-WeaponPaints",
+        "documentation": "https://github.com/Nereziel/cs2-WeaponPaints/wiki",
+        "issues": "https://github.com/Nereziel/cs2-WeaponPaints/issues"
+      },
+      "verified": true,
+      "featured": true,
+      "officialSupport": false,
+      "compatibility": {
+        "cs2Version": ">=1.0.0",
+        "platforms": [
+          "windows",
+          "linux"
+        ]
+      },
+      "metadata": {
+        "addedAt": "2025-10-27T00:00:00Z",
+        "updatedAt": "2026-04-23T17:18:50Z",
+        "lastChecked": "2026-04-28T03:20:27.391Z"
       }
     }
   ],
   "statistics": {
-    "totalPlugins": 3,
-    "verifiedPlugins": 0,
+    "totalPlugins": 4,
+    "verifiedPlugins": 1,
     "totalDownloads": 0,
-    "activeAuthors": 1
+    "activeAuthors": 2
   }
 }

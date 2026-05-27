@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-05-27T15:43:08.105Z",
+  "lastUpdated": "2026-05-27T20:19:09.543Z",
   "updateInterval": 3600,
   "categories": [
     {
@@ -113,7 +113,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-07-17T19:10:58Z",
-        "lastChecked": "2026-05-27T15:43:02.747Z"
+        "lastChecked": "2026-05-27T20:19:03.980Z"
       }
     },
     {
@@ -203,7 +203,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2025-02-28T19:58:33Z",
-        "lastChecked": "2026-05-27T15:43:04.183Z"
+        "lastChecked": "2026-05-27T20:19:05.449Z"
       }
     },
     {
@@ -290,7 +290,7 @@
       "metadata": {
         "addedAt": "2025-10-29T00:00:00Z",
         "updatedAt": "2026-04-10T10:32:08Z",
-        "lastChecked": "2026-05-27T15:43:05.554Z"
+        "lastChecked": "2026-05-27T20:19:07.047Z"
       }
     },
     {
@@ -385,7 +385,7 @@
       "metadata": {
         "addedAt": "2025-10-27T00:00:00Z",
         "updatedAt": "2026-04-29T10:35:18Z",
-        "lastChecked": "2026-05-27T15:43:07.104Z"
+        "lastChecked": "2026-05-27T20:19:08.543Z"
       }
     }
   ],
